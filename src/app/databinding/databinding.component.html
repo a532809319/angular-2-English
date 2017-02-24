@@ -3,4 +3,11 @@
 </p>
 <br>
 <input type="text" [value]="a">
-<p [ngClass]="{redBox: true}">its styled</p>
+<p [ngClass]="{redBox: ontest()}">its styled</p>
+<p [ngStyle]="{color:'green'}">its styled</p>
+<h3>
+  <app-property-bindding [result]="40"></app-property-bindding>
+</h3>
+<app-event-bindding (clickAble)="onClicked($event)" style="width: 200px"></app-event-bindding>
+<h1>双向数据绑定</h1>
+<app-two-way-binding></app-two-way-binding>

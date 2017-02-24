@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-databinding',
   templateUrl: './databinding.component.html',
   styleUrls: ['./databinding.component.css']
 })
-export class DatabindingComponent implements OnInit {
+export class DatabindingComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
+@Output() clicked= new EventEmitter<string>()
   a:string='数据啊a';
   b:string='数据啊b';
+  ontest=function () {
+    //this.cliced.emit('it is work')
+
+    return false;
+  }
+  onClicked(value:string){
+    alert(value);
+  }
 
 }

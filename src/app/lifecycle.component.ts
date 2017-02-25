@@ -1,5 +1,4 @@
-import {
-  Component ,
+import { Component,
   OnInit,
   OnChanges,
   DoCheck,
@@ -9,20 +8,22 @@ import {
   AfterViewChecked,
   OnDestroy
 
-
-
-}
-from '@angular/core';
+} from '@angular/core';
 
 @Component({
-  selector: 'app-two-way-binding',
+  selector: 'app-lifecycle',
   template: `
-    <input type="text" [(ngModel)]="person.name">
-    <input type="text" [(ngModel)]="person.name">
+    <p>
+      lifecycle Works!
+    </p>
   `,
   styles: []
 })
-export class TwoWayBindingComponent implements  OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
+export class LifecycleComponent implements  OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
+
+//export class LifecycleComponent implements OnInit {
+
+  constructor() { }
   ngOnChanges() {
     console.log('ngOnchange')
   }
@@ -48,9 +49,4 @@ export class TwoWayBindingComponent implements  OnChanges,OnInit,DoCheck,AfterCo
     console.log('ngOnDestroy')
 
   }
-person = {
-  name :'max',
-  age:29
-}
-
 }
